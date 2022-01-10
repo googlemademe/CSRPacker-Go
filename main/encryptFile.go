@@ -72,7 +72,7 @@ func encryptFiles(startFolder string, endFolder string) {
 		writeJson := gzip.NewWriter(textFile)
 
 		//Generating the json string with hashkey
-		jsonString := GetSignature(string(jsonFile), getHashkey()) + "\r" + string(jsonFile)
+		jsonString := encryptJsonString(jsonFile)
 
 		//Write the binary data to the file
 		writeJson.Write([]byte(jsonString))
