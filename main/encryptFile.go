@@ -15,10 +15,10 @@ import (
 func encryptFiles(startFolder string, endFolder string) {
 
 	//FOR loop to read all the files in the "Decrypted" folder and create a gzip file in "Finished" folder
-	for _, b := range readFolder(startFolder) {
+	for _, fileName := range readFolder(startFolder) {
 
 		//Open a file in the "Decrypted" folder
-		textFile, perr := os.Open(b)
+		textFile, perr := os.Open(fileName)
 
 		//IF statement to check if there is any exception and exit the program
 		if perr != nil {
@@ -29,7 +29,7 @@ func encryptFiles(startFolder string, endFolder string) {
 		//Create a Reader and use ReadAll to get all the bytes from the file
 		reader := bufio.NewReader(textFile)
 
-		//Closes the Reader
+		//Defer the closing of our jsonFile so that we can parse it later on
 		defer textFile.Close()
 
 		//Read all the data from the file from the Reader buffer
@@ -54,7 +54,7 @@ func encryptFiles(startFolder string, endFolder string) {
 		finishedFile := currentDIR + endFolder
 
 		//Getting the filename for the file
-		fileName := filepath.Base(b)
+		fileName := filepath.Base(fileName)
 
 		//Generating the json string from the json unmarshal data
 		jsonFile, _ := json.Marshal(result)
