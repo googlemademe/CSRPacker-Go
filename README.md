@@ -25,7 +25,7 @@ Double-click on the apporpiate binary for your Windows OS.
 
 64-bit-x64* - CSRPacker-linux-amd64
 
-***You will need to set execute permission on the binary executable**
+***You will need to set executable permission on the binary executable**
 
 **MacOS X:**
 
@@ -33,4 +33,4 @@ Double-click on the apporpiate binary for your Windows OS.
 
 64-bit-arm64* - CSRPacker-darwin-arm64
 
-***You will need to set execute permission on the binary executable**
+***You will need to set executable permission on the binary executable**
