@@ -5,7 +5,7 @@ This is a Go wrapper for the CSRPacker commandline application.
 
 Please visit the CSRPacker owner for any copyright infringement request.  
 
-How-to-Run:
+**How-to-Run:**
 
 When you first run the CSRPacker app, it will check if thh three folder exists - "Original", "Decrypted", and "Finished" folder.
 If not, it will create the folders.
