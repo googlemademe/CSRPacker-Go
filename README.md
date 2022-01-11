@@ -7,8 +7,8 @@ Please visit the CSRPacker owner for any copyright infringement request.
 
 How-to-Run:
 
-1) When you first run the CSRPacker app, it will check if thh three folder exists - "Original", "Decrypted", and "Finished" folder.
-   If not, it will create the folders.
+When you first run the CSRPacker app, it will check if thh three folder exists - "Original", "Decrypted", and "Finished" folder.
+If not, it will create the folders.
    
 
 Windows:
