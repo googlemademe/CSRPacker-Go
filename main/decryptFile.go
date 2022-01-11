@@ -78,6 +78,6 @@ func decryptFiles(startFolder string, endFolder string) {
 		_ = ioutil.WriteFile(decryptedFile+fileName+".txt", jsonFile, 0644)
 
 		//Prints out a successful write notice
-		fmt.Println("Successfully Converted " + fileName)
+		fmt.Println("Successfully Converted " + filepath.FromSlash(decryptedFile+fileName))
 	}
 }

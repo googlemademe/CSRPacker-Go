@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"path/filepath"
 )
 
 //Main function to start the wrapper program
@@ -16,7 +17,7 @@ func main() {
 	currentDIR, _ := os.Getwd()
 
 	// String array to hold the full path for the working directories
-	folderArray = []string{currentDIR + originalFolder, currentDIR + decryptedFolder, currentDIR + finishedFolder}
+	folderArray := []string{filepath.FromSlash(currentDIR + originalFolder), filepath.FromSlash(currentDIR + decryptedFolder), filepath.FromSlash(currentDIR + finishedFolder)}
 
 	//FOR loop to check if required directores are present, if not it will create them
 	for _, b := range folderArray {
