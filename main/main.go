@@ -16,7 +16,7 @@ func main() {
 	currentDIR, _ := os.Getwd()
 
 	// String array to hold the full path for the working directories
-	var folderArray = []string{currentDIR + originalFolder, currentDIR + decryptedFolder, currentDIR + finishedFolder}
+	folderArray = []string{currentDIR + originalFolder, currentDIR + decryptedFolder, currentDIR + finishedFolder}
 
 	//FOR loop to check if required directores are present, if not it will create them
 	for _, b := range folderArray {
