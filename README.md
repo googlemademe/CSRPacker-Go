@@ -16,11 +16,13 @@ Windows:
 Double-click on the apporpiate binary for your Windows OS.
 
 32-bit-x386 - CSRPacker-windows-386
+
 64-bit-x64 - CSRPacker-windows-amd64
 
 Linux:
 
 32-bit-x386* - CSRPacker-linux-386
+
 64-bit-x64* - CSRPacker-linux-amd64
 
 ***You will need to set execute permission on the binary executable**
@@ -28,6 +30,7 @@ Linux:
 MacOS X:
 
 64-bit-x64* - CSRPacker-darwin-amd64
+
 64-bit-arm64* - CSRPacker-darwin-arm64
 
 ***You will need to set execute permission on the binary executable**
