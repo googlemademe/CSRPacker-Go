@@ -11,14 +11,6 @@ When you first run the CSRPacker app, it will check if thh three folder exists -
 If not, it will create the folders.
    
 
-**Windows:**
-
-Double-click on the apporpiate binary for your Windows OS.
-
-32-bit-x386 - CSRPacker-windows-386
-
-64-bit-x64 - CSRPacker-windows-amd64
-
 **Linux:**
 
 32-bit-x386* - CSRPacker-linux-386
