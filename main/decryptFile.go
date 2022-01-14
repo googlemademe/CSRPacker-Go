@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"compress/gzip"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 )
@@ -50,19 +50,15 @@ func decryptFiles(startFolder string, endFolder string) {
 		//Read all the data from the file from the IO buffer
 		byteValue, _ := ioutil.ReadAll(scanner)
 
-		//Variable for JSON UnMarshal variable
-		var result map[string]interface{}
-
-		//Reads the JSON data into a json unmarshal variable
-		json.Unmarshal([]byte(byteValue), &result)
-
 		//Gets the current full working directory path
 		currentDIR, ierr := os.Getwd()
 
 		//IF statement to check if there is any exception and exit the program
 		if ierr != nil {
+			fmt.Println("Fatal Error cannot access directory to save the file....")
+			fmt.Println("Exiting....")
 			fmt.Println(ierr)
-			os.Exit(-1)
+			os.Exit(3)
 		}
 
 		//Creating the "Decrypted" folder full directory path
@@ -71,11 +67,18 @@ func decryptFiles(startFolder string, endFolder string) {
 		//Getting the filename for the file
 		fileName := filepath.Base(fileName)
 
-		//Generating the json string from the json unmarshal data with standard indents
-		jsonFile, _ := json.MarshalIndent(result, "", " ")
+		//Function call to indent the json data string for human readability
+		indentedString, err := PrettyString(string(byteValue))
 
+		//IF statement to check if there is any exception and exit the program
+		if err != nil {
+			fmt.Println("Fatal Error while indenting the JSON data string....")
+			fmt.Println("Exiting....")
+			log.Fatal(err)
+			os.Exit(3)
+		}
 		//Write the json string to a text file
-		_ = ioutil.WriteFile(decryptedFile+fileName+".txt", jsonFile, 0644)
+		_ = ioutil.WriteFile(decryptedFile+fileName+".txt", []byte(indentedString), 0644)
 
 		//Prints out a successful write notice
 		fmt.Println("Successfully Converted " + filepath.FromSlash(decryptedFile+fileName))
