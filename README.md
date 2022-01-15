@@ -23,6 +23,6 @@ If not, it will create the folders.
 
 64-bit-x64* - CSRPacker-darwin-amd64
 
-64-bit-arm64* - CSRPacker-darwin-arm64
+64-bit-arm64* - CSRPacker-darwin-arm64 - (note tested - No Apple Arm M processot to test at the moment)
 
 ***You will need to set executable permission on the binary executable**
