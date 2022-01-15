@@ -11,6 +11,7 @@ import (
 //Function to delete all files in all directories
 func deleteAllFiles(folderArray []string) {
 
+	fmt.Println()
 	//FOR loop to recursively walk the directory
 	for _, folderName := range folderArray {
 		//get the current working directory
@@ -23,4 +24,5 @@ func deleteAllFiles(folderArray []string) {
 			fmt.Println(filepath.FromSlash((path.Join([]string{folderName, fileName.Name()}...))))
 		}
 	}
+	fmt.Println()
 }
